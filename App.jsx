@@ -1,15 +1,14 @@
+// App.js
+
 import React from 'react';
-import { SafeAreaView, Text, View } from 'react-native';
-import Home from './src/Home';
-import Order from './src/Order';
+import { NavigationContainer } from '@react-navigation/native';
+import Bottomtab from './src/Bottomtab';
 
 const App = () => {
   return (
-<View style={{flex:1}}>
-  <Order/>
-
-  
-</View>
+    <NavigationContainer>
+      <Bottomtab /> 
+    </NavigationContainer>
   );
 };
 

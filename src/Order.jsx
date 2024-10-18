@@ -2,12 +2,17 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image,ScrollView } from 'react-native';
 
 // Create a component
-const Order = () => {
+const Order = ({navigation}) => {
     return (
         <ScrollView  contentContainerStyle={styles.container}>
             <View style={styles.section}>
-                <Text style={styles.icon}>&gt;</Text>
-                <Text style={styles.title}>Set Directions</Text>
+          
+                <Image
+                        source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs7RfUclerkqnIZjKkkofTlDl_ty3EWchtKQ&s' }}
+                        style={styles.image}
+                        resizeMode="contain"
+                    />
+                <Text style={styles.title}>Delivery Details</Text>
             </View>
 
             {/* Select bar */}
@@ -24,12 +29,13 @@ const Order = () => {
             <View style={styles.container3}>
                 <View style={styles.row}>
                     <Image
-                        source={{ uri: 'https://bit.ly/4eIFHBl' }}
+                        source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWGG-yMbYdNxulUD9yb54VJKvl2jq1kNG-uQ&s' }}
                         style={styles.image}
                         resizeMode="contain"
                     />
+                   
                     <View style={styles.textContainer}>
-                        <Text style={styles.text}>San Francisco</Text>
+                        <Text style={styles.text}>San Francisco Bay Area</Text>
                     </View>
                     <Text style={styles.arrow}>&gt;</Text>
                 </View>
@@ -37,12 +43,12 @@ const Order = () => {
                 {/* 2nd location */}
                 <View style={[styles.row, { marginTop: 10 }]}>
                     <Image
-                        source={{ uri: 'https://bit.ly/4eIFHBl' }}
+                        source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3RTyQa3r_D_aD1BnmKPMwBovraFRwbBe0Mw&s' }}
                         style={styles.image}
                         resizeMode="contain"
                     />
                     <View style={styles.textContainer}>
-                        <Text style={styles.text}>San Francisco</Text>
+                        <Text style={styles.text}>Meet at the door</Text>
                     </View>
                     <Text style={styles.arrow}>&gt;</Text>
                 </View>
@@ -77,7 +83,7 @@ const Order = () => {
     <View style={{ 
         flexDirection: 'column', 
         justifyContent: 'center', 
-        backgroundColor: '#f0e6e4', 
+
         padding: 10, 
         borderRadius: 5, 
         flex: 1, // Take up available space
@@ -92,7 +98,7 @@ const Order = () => {
         justifyContent: 'center', 
         alignItems: 'center', 
         flex: 1, // Take up available space
-        backgroundColor:'#f0e6e4',
+        // backgroundColor:'#f0e6e4',
         borderRadius:10,
         
     }}>
@@ -139,7 +145,7 @@ const Order = () => {
 <View style={{ 
    
    flexDirection: 'row',
-   borderColor: 'black', 
+   borderColor: 'white', 
    marginTop:10,
    width:'100%',
    borderWidth: 3, // Border width for visibility
@@ -296,80 +302,20 @@ const Order = () => {
 {/* end */}
 
 {/* cardscroolview */}
-<View style={styles.card}>
-  <Image source={{ uri: 'https://bit.ly/4gWVjCT' }} style={{width: 350, height: 150, borderRadius:10}} resizeMode='cover'></Image>
-  <View>
-    <Text style={{fontSize: 20,fontWeight: 'bold', color: 'black',
-}}>American Street Cafe</Text>
-        <Text style={{fontSize: 12,fontWeight: 'bold', color: 'black',
-}}>Best in chandigarh and free hom delivery at just 199</Text>
-  </View>
- 
-    
-</View>
 
-{/* card2 */}
-<View style={styles.card}>
-  <Image source={{ uri: 'https://bit.ly/4dEPI15' }} style={{width: 350, height: 150, borderRadius:10}} resizeMode='cover'></Image>
-  <View>
-    <Text style={{fontSize: 20,fontWeight: 'bold', color: 'black',
-}}>LA Miami Pizza</Text>
-        <Text style={{fontSize: 12,fontWeight: 'bold', color: 'black',
-}}>Best in chandigarh and free hom delivery at just 199</Text>
-  </View>
- 
-    
+<View style={{ flexDirection: 'row', justifyContent: 'space-around', marginVertical: 20, width: '100%' }}>
+    <TouchableOpacity 
+        style={{ backgroundColor: '#007BFF', paddingVertical: 10, paddingHorizontal: 20, borderRadius: 5 }} 
+        onPress={() => navigation.navigate('Home')}>
+        <Text style={{ color: 'white', fontSize: 16 }}>Home</Text>
+    </TouchableOpacity>
+    <TouchableOpacity 
+        style={{ backgroundColor: '#007BFF', paddingVertical: 10, paddingHorizontal: 20, borderRadius: 5 }} 
+        onPress={() => navigation.navigate('Vege')}>
+        <Text style={{ color: 'white', fontSize: 16 }}>Vege</Text>
+    </TouchableOpacity>
 </View>
-{/* card */}
-<View style={styles.card}>
-  <Image source={{ uri: 'https://bit.ly/4dEQ0oH' }} style={{width: 350, height: 150, borderRadius:10}} resizeMode='cover'></Image>
-  <View>
-    <Text style={{fontSize: 20,fontWeight: 'bold', color: 'black',
-}}>Baskin and Robin</Text>
-        <Text style={{fontSize: 12,fontWeight: 'bold', color: 'black',
-}}>Best in chandigarh and free hom delivery at just 199</Text>
-  </View>
- 
-    
-</View>
-{/* card */}
-
-<View style={styles.card}>
-  <Image source={{ uri: 'https://bit.ly/4eCTk58' }} style={{width: 350, height: 150, borderRadius:10}} resizeMode='cover'></Image>
-  <View>
-    <Text style={{fontSize: 20,fontWeight: 'bold', color: 'black',
-}}>KFC</Text>
-        <Text style={{fontSize: 12,fontWeight: 'bold', color: 'black',
-}}>All items price at just 199!! Grab the Deal</Text>
-  </View>
- 
-    
-</View>
-
-<View style={styles.card}>
-  <Image source={{ uri: 'https://bit.ly/3zPtZFZ' }} style={{width: 350, height: 150, borderRadius:10}} resizeMode='cover'></Image>
-  <View>
-    <Text style={{fontSize: 20,fontWeight: 'bold', color: 'black',
-}}>Amrit Sweets</Text>
-        <Text style={{fontSize: 12,fontWeight: 'bold', color: 'black',
-}}>Best sweets and fast food in tricity</Text>
-  </View>
- 
-    
-</View>
-
-<View style={styles.card}>
-  <Image source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6x3etloFG5HVh-5FLrvMOdzosjZR2X6u-HA&s' }} style={{width: 350, height: 150, borderRadius:10}} resizeMode='cover'></Image>
-  <View>
-    <Text style={{fontSize: 20,fontWeight: 'bold', color: 'black',
-}}>Mcdonald's</Text>
-        <Text style={{fontSize: 12,fontWeight: 'bold', color: 'black',
-}}>Best Chicken salami burger!! Hot and crispy</Text>
-  </View>
- 
-    
-</View>
-{/* endcardscroolview */}
+<View style={{marginBottom:10}}></View>
 
 
         </ScrollView >
@@ -396,7 +342,7 @@ const styles = StyleSheet.create({
         marginRight: 10,
     },
     title: {
-        fontSize: 20,
+        fontSize: 24,
         fontWeight: 'bold',
         color: 'black',
     },
@@ -404,7 +350,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         marginVertical: 20,
         height: 60,
-        backgroundColor: '#f0e6e4',
+        backgroundColor: '#d0d3d4',
         borderRadius: 20,
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -426,7 +372,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 10,
         marginLeft: 5,
-        backgroundColor: '#f0e6e4',
+        backgroundColor: '#d0d3d4',
         borderRadius: 20,
         height: 50,
     },

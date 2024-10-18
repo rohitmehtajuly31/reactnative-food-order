@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Alert, Image, ScrollView
  } from 'react-native';
 
 // Create a component
-const Home = () => {
+const Home = ({navigation}) => {
     const handlePress = (buttonNumber) => {
         Alert.alert(`Button ${buttonNumber} Pressed!`);
     };
@@ -258,6 +258,19 @@ fontWeight: 'bold' }}>Grocery</Text>
     
 </View>
 
+{/* Navigate to Order and Vege */}
+<View style={{ flexDirection: 'row', justifyContent: 'space-around', marginVertical: 20, width: '100%' }}>
+    <TouchableOpacity 
+        style={{ backgroundColor: '#007BFF', paddingVertical: 10, paddingHorizontal: 20, borderRadius: 5 }} 
+        onPress={() => navigation.navigate('Order')}>
+        <Text style={{ color: 'white', fontSize: 16 }}>Go to Order</Text>
+    </TouchableOpacity>
+    <TouchableOpacity 
+        style={{ backgroundColor: '#007BFF', paddingVertical: 10, paddingHorizontal: 20, borderRadius: 5 }} 
+        onPress={() => navigation.navigate('Vege')}>
+        <Text style={{ color: 'white', fontSize: 16 }}>Go to Vege</Text>
+    </TouchableOpacity>
+</View>
 
         
 
