@@ -3,8 +3,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './Home';
 import Order from './Order';
 import Vege from './Vege';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-
 import { Image, StyleSheet } from 'react-native';
 
 const Tab = createBottomTabNavigator();
@@ -14,8 +12,6 @@ const Bottomtab = () => {
     <Tab.Navigator
       initialRouteName="Home"
       screenOptions={{
-        tabBarActiveTintColor: '#007BFF',
-        tabBarInactiveTintColor: 'gray',
         tabBarStyle: { backgroundColor: 'white' },
         tabBarLabelStyle: styles.tabLabel,
       }}
@@ -24,12 +20,12 @@ const Bottomtab = () => {
         name="Home" 
         component={Home}
         options={{
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({ focused }) => (
             <Image
-            source={require('../src/assets/home1.png')} // Update to your actual image path
-            style={styles.icon}
-            resizeMode="contain"
-          />
+              source={focused ? require('../src/assets/home1.png') : require('../src/assets/homey.png')}
+              style={[styles.icon, { marginTop: 15 }]} // Added marginTop here
+              resizeMode="contain"
+            />
           ),
         }} 
       />
@@ -37,12 +33,12 @@ const Bottomtab = () => {
         name="Order" 
         component={Order}
         options={{
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({ focused }) => (
             <Image
-            source={require('../src/assets/order.png')} // Update to your actual image path
-            style={styles.icon}
-            resizeMode="contain"
-          />
+              source={focused ? require('../src/assets/cartlight.png') : require('../src/assets/25619.png')}
+              style={[styles.icon, { marginTop: 15 }]} // Added marginTop here
+              resizeMode="contain"
+            />
           ),
         }} 
       />
@@ -50,12 +46,12 @@ const Bottomtab = () => {
         name="Vege" 
         component={Vege}
         options={{
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({ focused }) => (
             <Image
-            source={require('../src/assets/food.png')} // Update to your actual image path
-            style={styles.icon}
-            resizeMode="contain"
-          />
+              source={focused ? require('../src/assets/foodark.png') : require('../src/assets/foodlight.png')}
+              style={[styles.icon, { marginTop: 15 }]} // Added marginTop here
+              resizeMode="contain"
+            />
           ),
         }} 
       />
@@ -66,15 +62,16 @@ const Bottomtab = () => {
 const styles = StyleSheet.create({
   tabLabel: {
     fontSize: 12,
-    marginBottom: 5,
+marginTop:5,
     fontWeight: 'bold',
     color: 'black',
+    height:20
+    
   },
-  icon:{
-    width:25,
-    height:30
-
-  }
+  icon: {
+    width: 25,
+    height: 25,
+  },
 });
 
 export default Bottomtab;

@@ -267,8 +267,8 @@ fontWeight: 'bold' }}>Grocery</Text>
     </TouchableOpacity>
     <TouchableOpacity 
         style={{ backgroundColor: '#007BFF', paddingVertical: 10, paddingHorizontal: 20, borderRadius: 5 }} 
-        onPress={() => navigation.navigate('Vege')}>
-        <Text style={{ color: 'white', fontSize: 16 }}>Go to Vege</Text>
+        onPress={() => navigation.navigate('HomeNew')}>
+        <Text style={{ color: 'white', fontSize: 16 }}>Homenew</Text>
     </TouchableOpacity>
 </View>
 
