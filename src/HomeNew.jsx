@@ -9,6 +9,32 @@ import { StackView } from '@react-navigation/stack';
 
 // Create a component
 const HomeNew = () => {
+
+    const Resabove=({title})=>{
+        return(
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '90%'}}>
+            <View style={{ flexDirection: 'row', alignItems:'center' }}>
+                <Text style={{color:'black', fontSize:14, fontWeight:'bold'}}>{title}</Text>
+            </View>
+            <View style={{ flexDirection: 'row', borderRadius:100, alignItems:'flex-start', justifyContent:'flex-start',backgroundColor:'#d7dbdd' }}>
+                <Image
+                    source={require('../src/assets/arrowright.png')}
+                    style={{ width: 20, height: 40,marginHorizontal:10, borderRadius:50}} // Adjusted height and added margin
+                    resizeMode='contain' // Use 'contain' for better scaling
+                />
+            </View>
+        </View>
+        )
+    }
+
+    const Horizontaline=()=>{
+        return(
+            <View style={styles.line}></View>
+        )
+
+    }
+
+
     const SearchBar = ({ value, onChangeText }) => {
         return (
             <View style={styles.searchContainer}>
@@ -116,15 +142,34 @@ const HomeNew = () => {
 {/* icons in hori */}
 
 <ScrollView horizontal={true} contentContainerStyle={{flexDirection:'row',
-        alignItems:'flex-start',
-        width:'100%',marginHorizontal:20, marginTop:0}}>
+        alignItems:'flex-start', 
+        width:'100%',marginHorizontal:20, marginTop:10}}>
     <View style={{
         flexDirection: 'row',
-        alignItems: 'center',
+        alignItems: 'flex-center',
         justifyContent: 'center', // Center the items within the View
         borderRadius: 20,
         width: '25%',
-        backgroundColor: 'red',
+        backgroundColor: '#e5e7e9',
+        padding: 10, marginRight:5// Added padding for better spacing
+    }}>
+        <View style={{flexDirection:'row'}}>
+        <Image
+            source={require('../src/assets/burger.png')}
+            style={{ width: 20, height: 20, marginRight: 5 }} // Adjusted height and added margin
+            resizeMode='contain' // Use 'contain' for better scaling
+        /></View>
+        <View>
+        <Text> Pick up</Text></View>
+    </View>
+
+    <View style={{
+        flexDirection: 'row',
+        alignItems: 'flex-center',
+        justifyContent: 'center', // Center the items within the View
+        borderRadius: 20,
+        width: '25%',
+        backgroundColor: '#e5e7e9',
         padding: 10, // Added padding for better spacing
     }}>
         <View style={{flexDirection:'row'}}>
@@ -136,7 +181,117 @@ const HomeNew = () => {
         <View>
         <Text> Pick up</Text></View>
     </View>
+
+    <View style={{
+        flexDirection: 'row',
+        alignItems: 'flex-center',
+        justifyContent: 'center', // Center the items within the View
+        borderRadius: 20,
+        width: '25%',
+        backgroundColor: '#e5e7e9',
+        padding: 10, marginRight:5// Added padding for better spacing
+    }}>
+        <View style={{flexDirection:'row'}}>
+        <Image
+            source={require('../src/assets/burger.png')}
+            style={{ width: 20, height: 20, marginRight: 5 }} // Adjusted height and added margin
+            resizeMode='contain' // Use 'contain' for better scaling
+        /></View>
+        <View>
+        <Text> Pick up</Text></View>
+    </View>
+
+    <View style={{
+        flexDirection: 'row',
+        alignItems: 'flex-center',
+        justifyContent: 'center', // Center the items within the View
+        borderRadius: 20,
+        width: '25%',
+        backgroundColor: '#e5e7e9',
+        padding: 10, marginRight:5// Added padding for better spacing
+    }}>
+        <View style={{flexDirection:'row'}}>
+        <Image
+            source={require('../src/assets/burger.png')}
+            style={{ width: 40, height: 20, marginRight: 5 }} // Adjusted height and added margin
+            resizeMode='contain' // Use 'contain' for better scaling
+        /></View>
+        <View>
+        <Text> Delive</Text></View>
+    </View>
+
+    <View style={{
+        flexDirection: 'row',
+        alignItems: 'flex-center',
+        justifyContent: 'center', // Center the items within the View
+        borderRadius: 20,
+        width: '25%',
+        backgroundColor: 'red',
+        padding: 10, marginRight:5// Added padding for better spacing
+    }}>
+        <View style={{flexDirection:'row'}}>
+        <Image
+            source={require('../src/assets/burger.png')}
+            style={{ width: 20, height: 20, marginRight: 5 }} // Adjusted height and added margin
+            resizeMode='contain' // Use 'contain' for better scaling
+        /></View>
+        <View>
+        <Text> Pick up</Text></View>
+    </View>
+
+    <View style={{
+        flexDirection: 'row',
+        alignItems: 'flex-center',
+        justifyContent: 'center', // Center the items within the View
+        borderRadius: 20,
+        width: '25%',
+        backgroundColor: '#e5e7e9',
+        padding: 10, marginRight:5// Added padding for better spacing
+    }}>
+        <View style={{flexDirection:'row'}}>
+        <Image
+            source={require('../src/assets/burger.png')}
+            style={{ width: 20, height: 20, marginRight: 5 }} // Adjusted height and added margin
+            resizeMode='contain' // Use 'contain' for better scaling
+        /></View>
+        <View>
+        <Text> Pick up</Text></View>
+    </View>
+    
 </ScrollView>
+{/* text */}
+
+<View style={{flexDirection:'row', marginVertical:10,  width:'90%'}}>
+    
+            <Text style={{justifyContent:'flex-start', textAlign:'left', fontSize:14, color:'black'}}>
+                Additional fees may apply. 
+            </Text>
+            <TouchableOpacity onPress={{}}>
+                <Text style={{fontWeight:'bold',color:'black', marginLeft:10}}>Learn more</Text>
+            </TouchableOpacity>
+        </View>
+
+        <Horizontaline/>
+        {/* card start text */}
+        <Resabove title="Features on Uber Eats"/>
+        {/* restaruants card */}
+        <View style={{flexDirection:'row', backgroundColor:'pink'}}>
+            <View style={{flexDirection:'row'}}>
+                <View>
+            <Image source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6x3etloFG5HVh-5FLrvMOdzosjZR2X6u-HA&s' }} style={{width: 250, height: 150, borderRadius:10}} resizeMode='cover'></Image>
+
+            </View>
+            </View>
+
+
+
+
+        </View>
+
+
+
+
+
 
 
         </ScrollView>
@@ -149,7 +304,6 @@ const HomeNew = () => {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'white',
-        flexGrow: 1,
         justifyContent: 'flex-start',
         alignItems: 'center',
         // Add padding for better spacing
@@ -199,6 +353,12 @@ const styles = StyleSheet.create({
         width:'100%',
         backgroundColor:'#f3f3f3',
 
+    },
+    line:{
+        borderBottomWidth: 1, // Thickness of the line
+        borderBottomColor: '#ccd1d1', // Color of the line
+        width: '100%', // Full width of the container
+        marginVertical: 10,
     }
 });
 
